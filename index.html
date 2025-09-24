@@ -185,129 +185,129 @@
 </head>
 <body class="min-h-screen font-sans">
     <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
         Aller au contenu principal
     </a>
 
     <!-- Hero Section -->
-    <main id="main-content">
-        <header class="relative min-h-screen hero-bg flex flex-col items-center justify-center px-4" role="banner">
-            <!-- Content -->
-            <section class="relative z-10 text-center max-w-4xl mx-auto">
-                <!-- Peugeot Logo -->
-                <div class="mb-12">
-                    <div class="w-24 h-24 mx-auto mb-8">
-                        <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/9/9d/Peugeot_2021_Logo.svg/699px-Peugeot_2021_Logo.svg.png" 
-                             alt="Logo Peugeot - Constructeur automobile français" 
-                             class="w-full h-full object-contain"
-                             width="96" 
-                             height="96"
-                             loading="eager">
-                    </div>
+    <header class="relative min-h-screen hero-bg flex flex-col items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <!-- Content -->
+        <section class="relative z-10 text-center max-w-4xl mx-auto">
+            <!-- Peugeot Logo -->
+            <div class="mb-12">
+                <div class="w-24 h-24 mx-auto mb-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/9/9d/Peugeot_2021_Logo.svg/699px-Peugeot_2021_Logo.svg.png" 
+                         alt="Logo Peugeot - Constructeur automobile français" 
+                         class="w-full h-full object-contain"
+                         width="96" 
+                         height="96"
+                         loading="eager">
                 </div>
+            </div>
 
-                <!-- Main Heading -->
-                <h1 class="md:text-5xl text-white mb-6 text-balance lg:text-5xl font-extrabold text-3xl">
-                    Découvrez la valeur de votre véhicule
-                </h1>
+            <!-- Main Heading -->
+            <h1 class="md:text-5xl text-white mb-6 text-balance lg:text-5xl font-extrabold text-3xl">
+                Découvrez la valeur de votre véhicule
+            </h1>
 
-                <!-- Subheading -->
-                <p class="text-white/90 mb-8 font-light text-2xl">Découvrez son prix en 2 minutes !</p>
+            <!-- Subheading -->
+            <p class="text-white/90 mb-8 font-light text-2xl">Découvrez son prix en 2 minutes !</p>
 
-                <div class="mb-12 flex justify-center">
-                    <p class="text-white/80 text-lg font-medium bg-white/10 backdrop-blur-sm px-6 py-2 border border-white/20 rounded-sm">
-                        ✨ Jusqu'à 2 000€ de bonus de reprise
-                    </p>
-                </div>
-
-                <!-- Form Card -->
-                <section class="max-w-4xl mx-auto glass-effect border-0 shadow-2xl overflow-hidden rounded-sm" aria-labelledby="estimation-form-title">
-                    <h2 id="estimation-form-title" class="sr-only">Formulaire d'estimation de véhicule</h2>
-                    <div class="p-6 md:p-8">
-                        <form class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-6 md:items-end" novalidate>
-                            <div class="relative md:col-span-4">
-                                <label for="licensePlate" class="block text-lg text-blue-600 mb-3 text-left font-bold">
-                                    Indiquez votre immatriculation
-                                </label>
-                                <div class="relative group">
-                                    <input
-                                        id="licensePlate"
-                                        name="licensePlate"
-                                        type="text"
-                                        placeholder="Ex. AB123CD"
-                                        aria-describedby="license-error"
-                                        autocomplete="off"
-                                        class="h-16 w-full text-xl font-medium border-2 border-blue-200 focus:border-blue-500 text-center placeholder:text-gray-400 placeholder:font-normal transition-all duration-200 group-hover:shadow-md rounded-sm focus:bg-blue-50 focus:outline-none pl-12"
-                                    />
-                                    <div class="absolute left-4 top-1/2 -translate-y-1/2 text-blue-400" aria-hidden="true">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <rect x="3" y="6" width="18" height="12" rx="2" ry="2"></rect>
-                                            <circle cx="12" cy="12" r="2"></circle>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <p id="license-error" class="absolute top-full left-0 mt-1 text-red-500 text-sm text-left bg-red-50 px-3 py-1 rounded-lg shadow-sm border border-red-200 z-10 max-w-full whitespace-nowrap hidden" role="alert">
-                                    Format invalide (ex: AB123CD)
-                                </p>
-                            </div>
-
-                            <div class="relative md:col-span-4">
-                                <label for="mileage" class="block text-lg text-blue-600 mb-3 text-left font-bold">
-                                    Indiquez votre kilométrage
-                                </label>
-                                <div class="relative group">
-                                    <input
-                                        id="mileage"
-                                        name="mileage"
-                                        type="text"
-                                        placeholder="Ex. 10 000"
-                                        pattern="[0-9\s]*"
-                                        inputmode="numeric"
-                                        aria-describedby="mileage-error"
-                                        autocomplete="off"
-                                        class="h-16 w-full text-xl font-medium border-2 border-blue-200 focus:border-blue-500 text-center pr-16 placeholder:text-gray-400 placeholder:font-normal transition-all duration-200 group-hover:shadow-md rounded-sm focus:bg-blue-50 focus:outline-none pl-12"
-                                    />
-                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-blue-600 font-bold text-lg bg-blue-100 px-2 py-1 rounded" aria-hidden="true">
-                                        km
-                                    </span>
-                                    <div class="absolute left-4 top-1/2 -translate-y-1/2 text-blue-400" aria-hidden="true">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <path d="M12 6v6l4 2"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <p id="mileage-error" class="absolute top-full left-0 mt-1 text-red-500 text-sm text-left bg-red-50 px-3 py-1 rounded-lg shadow-sm border border-red-200 z-10 max-w-full whitespace-nowrap hidden" role="alert">
-                                    Kilométrage maxi. 999 999 km
-                                </p>
-                            </div>
-
-                            <div class="md:col-span-4">
-                                <button
-                                    id="estimate-btn"
-                                    type="submit"
-                                    class="gradient-bg hover:shadow-xl text-white px-6 text-lg font-bold w-full shadow-lg hover-scale transition-all duration-200 h-16 rounded-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                                    aria-describedby="estimate-description"
-                                >
-                                    <span class="hidden md:inline text-center text-sm">ESTIMEZ VOTRE VOITURE</span>
-                                    <span class="md:hidden">ESTIMEZ</span>
-                                </button>
-                                <p id="estimate-description" class="sr-only">Cliquez pour obtenir une estimation gratuite de votre véhicule</p>
-                            </div>
-                        </form>
-                    </div>
-                </section>
-
-                <p class="text-base text-white/95 mt-6 text-center bg-black/20 backdrop-blur-sm px-6 py-4 border border-white/20 rounded-sm">
-                    Pas d'immatriculation ? <br class="md:hidden">
-                    <a href="/estimation-manuelle" class="text-white font-semibold underline hover:text-blue-200 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent">
-                        Complétez les informations manuellement ici
-                    </a>
+            <div class="mb-12 flex justify-center">
+                <p class="text-white text-lg font-medium bg-black/70 backdrop-blur-sm px-6 py-2 border border-white/20 rounded-sm">
+                    ✨ Jusqu'à 2 000€ de bonus de reprise
                 </p>
-            </section>
-        </header>
-    </main>
+            </div>
 
+            <!-- Form Card -->
+            <section class="max-w-4xl mx-auto glass-effect border-0 shadow-2xl overflow-hidden rounded-sm" aria-labelledby="estimation-form-title">
+                <h2 id="estimation-form-title" class="sr-only">Formulaire d'estimation de véhicule</h2>
+                <div class="p-6 md:p-8">
+                    <form class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-6 md:items-end" novalidate>
+                        <div class="relative md:col-span-4">
+                            <label for="licensePlate" class="block text-lg text-blue-600 mb-3 text-left font-bold">
+                                Indiquez votre immatriculation
+                            </label>
+                            <div class="relative group">
+                                <input
+                                    id="licensePlate"
+                                    name="licensePlate"
+                                    type="text"
+                                    placeholder="Ex. AB123CD"
+                                    aria-describedby="license-error"
+                                    autocomplete="off"
+                                    class="h-16 w-full text-xl font-medium border-2 border-blue-200 focus:border-blue-500 text-center placeholder:text-gray-400 placeholder:font-normal transition-all duration-200 group-hover:shadow-md rounded-sm focus:bg-blue-50 focus:outline-none pl-12"
+                                />
+                                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-blue-400" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="3" y="6" width="18" height="12" rx="2" ry="2"></rect>
+                                        <circle cx="12" cy="12" r="2"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p id="license-error" class="absolute top-full left-0 mt-1 text-red-500 text-sm text-left bg-red-50 px-3 py-1 rounded-lg shadow-sm border border-red-200 z-10 max-w-full whitespace-nowrap hidden" role="alert">
+                                Format invalide (ex: AB123CD)
+                            </p>
+                        </div>
+
+                        <div class="relative md:col-span-4">
+                            <label for="mileage" class="block text-lg text-blue-600 mb-3 text-left font-bold">
+                                Indiquez votre kilométrage
+                            </label>
+                            <div class="relative group">
+                                <input
+                                    id="mileage"
+                                    name="mileage"
+                                    type="text"
+                                    placeholder="Ex. 10 000"
+                                    pattern="[0-9\s]*"
+                                    inputmode="numeric"
+                                    aria-describedby="mileage-error"
+                                    autocomplete="off"
+                                    class="h-16 w-full text-xl font-medium border-2 border-blue-200 focus:border-blue-500 text-center pr-16 placeholder:text-gray-400 placeholder:font-normal transition-all duration-200 group-hover:shadow-md rounded-sm focus:bg-blue-50 focus:outline-none pl-12"
+                                />
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-blue-600 font-bold text-lg bg-blue-100 px-2 py-1 rounded" aria-hidden="true">
+                                    km
+                                </span>
+                                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-blue-400" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 6v6l4 2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p id="mileage-error" class="absolute top-full left-0 mt-1 text-red-500 text-sm text-left bg-red-50 px-3 py-1 rounded-lg shadow-sm border border-red-200 z-10 max-w-full whitespace-nowrap hidden" role="alert">
+                                Kilométrage maxi. 999 999 km
+                            </p>
+                        </div>
+
+                        <div class="md:col-span-4">
+                            <button
+                                id="estimate-btn"
+                                type="submit"
+                                class="gradient-bg hover:shadow-xl text-white px-6 text-lg font-bold w-full shadow-lg hover-scale transition-all duration-200 h-16 rounded-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                aria-describedby="estimate-description"
+                            >
+                                <span class="hidden md:inline text-center text-sm">ESTIMEZ VOTRE VOITURE</span>
+                                <span class="md:hidden">ESTIMEZ</span>
+                            </button>
+                            <p id="estimate-description" class="sr-only">Cliquez pour obtenir une estimation gratuite de votre véhicule</p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <p class="text-base text-white mt-6 text-center bg-black/80 backdrop-blur-sm px-6 py-4 border border-white/20 rounded-sm">
+                Pas d'immatriculation ? <br class="md:hidden">
+                <a href="/estimation-manuelle" class="text-white font-semibold underline hover:text-blue-200 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent" aria-label="Accéder au formulaire d'estimation manuelle sans immatriculation">
+                    Complétez les informations manuellement ici
+                </a>
+            </p>
+        </section>
+    </header>
+
+    <main id="main-content">
     <!-- Features Section -->
     <section class="bg-white py-16 px-4" aria-labelledby="features-title">
         <div class="max-w-6xl mx-auto">
@@ -319,7 +319,7 @@
                 <!-- Estimation Gratuite -->
                 <article class="text-center">
                     <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
@@ -332,7 +332,7 @@
                 <!-- Évaluation en ligne -->
                 <article class="text-center">
                     <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="M12 6v6l4 2"></path>
                         </svg>
@@ -346,7 +346,7 @@
                 <!-- Prix Compétitifs -->
                 <article class="text-center">
                     <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                             <path d="M7 15h0M17 15h0"></path>
                         </svg>
@@ -360,7 +360,7 @@
                 <!-- Service Rapide -->
                 <article class="text-center">
                     <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"></polygon>
                         </svg>
                     </div>
@@ -715,6 +715,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-black text-white" role="contentinfo">
