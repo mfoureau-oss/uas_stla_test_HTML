@@ -48,6 +48,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     
+    <!-- Hotjar Tracking Code for https://reprise.peugeot.be/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2583679,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,37 +71,51 @@
     <!-- Fonts -->
     <link href="https://fonts.cdnfonts.com/css/peugeot" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS avec gestion d'erreur améliorée -->
+    <script src="https://cdn.tailwindcss.com" onerror="this.onerror=null; console.warn('Tailwind CSS failed to load - using fallback styles')"></script>
     <script>
-        // Wait for Tailwind to load before configuring
-        window.addEventListener('DOMContentLoaded', function() {
-            if (typeof tailwind !== 'undefined') {
-                tailwind.config = {
-                    theme: {
-                        extend: {
-                            fontFamily: {
-                                'sans': ['Peugeot', 'sans-serif'],
-                            },
-                            colors: {
-                                'blue': {
-                                    50: '#eff6ff',
-                                    100: '#dbeafe',
-                                    200: '#bfdbfe',
-                                    300: '#93c5fd',
-                                    400: '#60a5fa',
-                                    500: '#3b82f6',
-                                    600: '#2563eb',
-                                    700: '#1d4ed8',
-                                    800: '#1e40af',
-                                    900: '#1e3a8a',
+        // Configuration Tailwind avec vérifications robustes
+        function configureTailwind() {
+            try {
+                if (typeof window.tailwind !== 'undefined' && window.tailwind.config) {
+                    window.tailwind.config = {
+                        theme: {
+                            extend: {
+                                fontFamily: {
+                                    'sans': ['Peugeot', 'sans-serif'],
+                                },
+                                colors: {
+                                    'blue': {
+                                        50: '#eff6ff',
+                                        100: '#dbeafe',
+                                        200: '#bfdbfe',
+                                        300: '#93c5fd',
+                                        400: '#60a5fa',
+                                        500: '#3b82f6',
+                                        600: '#2563eb',
+                                        700: '#1d4ed8',
+                                        800: '#1e40af',
+                                        900: '#1e3a8a',
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            } catch (error) {
+                console.warn('Tailwind configuration failed:', error);
             }
-        });
+        }
+        
+        // Essayer de configurer après un court délai
+        setTimeout(configureTailwind, 100);
+        
+        // Backup si le DOM est déjà chargé
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', configureTailwind);
+        } else {
+            configureTailwind();
+        }
     </script>
     
     <!-- Structured Data - JSON-LD -->
@@ -318,11 +344,13 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Estimation Gratuite -->
                 <article class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3" aria-hidden="true">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3">
                         <img src="https://usine-a-sites.s3.eu-west-1.amazonaws.com/site-peugeot-test/icons_voiture_peugeot.png" 
-                             alt="" 
+                             alt="Icône voiture pour estimation gratuite" 
                              class="w-full h-full object-contain"
-                             aria-hidden="true">
+                             width="48"
+                             height="48"
+                             loading="lazy">
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Estimation Gratuite</h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -332,11 +360,13 @@
 
                 <!-- Évaluation en ligne -->
                 <article class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3" aria-hidden="true">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3">
                         <img src="https://usine-a-sites.s3.eu-west-1.amazonaws.com/site-peugeot-test/PGT_CRO_M_Showroom-308_Commande.png" 
-                             alt="" 
+                             alt="Icône commande en ligne pour évaluation" 
                              class="w-full h-full object-contain"
-                             aria-hidden="true">
+                             width="48"
+                             height="48"
+                             loading="lazy">
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Évaluation en ligne</h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -346,11 +376,13 @@
 
                 <!-- Prix Compétitifs -->
                 <article class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3" aria-hidden="true">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3">
                         <img src="https://usine-a-sites.s3.eu-west-1.amazonaws.com/site-peugeot-test/icons_ordinateur_peugeot.png" 
-                             alt="" 
+                             alt="Icône ordinateur pour prix compétitifs" 
                              class="w-full h-full object-contain"
-                             aria-hidden="true">
+                             width="48"
+                             height="48"
+                             loading="lazy">
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Prix Compétitifs</h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -360,11 +392,13 @@
 
                 <!-- Service Rapide -->
                 <article class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3" aria-hidden="true">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center p-3">
                         <img src="https://usine-a-sites.s3.eu-west-1.amazonaws.com/site-peugeot-test/icons_prix_peugeot.png" 
-                             alt="" 
+                             alt="Icône prix pour service rapide" 
                              class="w-full h-full object-contain"
-                             aria-hidden="true">
+                             width="48"
+                             height="48"
+                             loading="lazy">
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Service Rapide</h3>
                     <p class="text-gray-600 leading-relaxed">
